@@ -16,6 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended : true}));
 app.use("/api" , paymentRoute);
 app.use("/data" , userInfoRoute);
+
 app.use("/cartData" , (req , res) => {
     if(req.body.orderDetails.length <= 0)
     return res.send({message : "no data save"})
