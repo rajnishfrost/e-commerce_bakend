@@ -1,10 +1,10 @@
 import {userInfoSchema} from "../schemas/userInfo.js";
-import mongoose from "mongoose";
+// import mongoose from "mongoose";
 import {config} from "dotenv";
 config({path : "./config/config.env"});
 
 
-mongoose.connect(process.env.MONGO_URI , { useNewUrlParser: true })
+// mongoose.connect(process.env.MONGO_URI , { useNewUrlParser: true })
 export const userInfo = async(req , res) => {
     let check = await userInfoSchema.findOne({email : req.body.email})
     if(check){
