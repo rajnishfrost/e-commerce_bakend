@@ -19,6 +19,7 @@ export const userInfo = async(req , res) => {
 
 export const logIn = async(req , res) => {
     let user = await userInfoSchema.findOne({email : req.body.email});
+    console.log(req.body , "this body log");
     if(user){
        if(user.password === req.body.password){
         res.send({found : true , message : "email pass match" , firstName : user});
